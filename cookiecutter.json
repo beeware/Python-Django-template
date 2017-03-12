@@ -1,4 +1,5 @@
 {
     "app_name": "appname",
-    "formal_name": "App Name"
+    "formal_name": "App Name",
+    "dir_name": "django"
 }
