@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
     context: __dirname,
     entry: [
-        './togatest.js'
+        './{{ cookiecutter.app_name }}.js'
     ],
     devtool: 'source-map',
     output: {

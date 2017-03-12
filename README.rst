@@ -6,7 +6,7 @@ A template for building Python apps that will run as a web server using Django.
 This repository branch contains a template for Python 3.5. Other Python versions are available by cloning other branches of repository.
 
 How to use
-------------
+----------
 
 Create a `setup.py`::
 
@@ -25,10 +25,9 @@ Create a `setup.py`::
           'django': {
               'app_requires': [
                   'toga-django',
-                  'toga'
               ]
           }
-      } 
+      }
   )
 
 
@@ -36,4 +35,6 @@ Create a Python 3.5 ``virtualenv``, and ``pip install briefcase``
 
 Then, generate the template::
 
-  python setup.py django
+  $ python setup.py django
+
+This will roll out a full Django project, ready for you to run or deploy.

@@ -17,10 +17,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from example import Example
+from {{ cookiecutter.app_name }} import {{ cookiecutter.class_name }}
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'', Example('Example App 1.0', 'org.beeware.example').urls)
+    url(r'', {{ cookiecutter.class_name }}('{{ cookiecutter.formal_name }} {{ cookiecutter.version_code }}', '{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}').urls)
 ]
