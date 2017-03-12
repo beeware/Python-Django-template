@@ -1,0 +1,40 @@
+{
+  "name": "togatest",
+  "version": "1.0.0",
+  "description": "A Test of Toga Django",
+  "author": "Russell Keith-Magee",
+  "license": "BSD-3-Clause",
+  "main": "./togatest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/webpack --progress",
+    "watch": "node_modules/.bin/webpack --progress --watch",
+    "serve": "node_modules/.bin/webpack-dev-server --inline --hot --port 3000"
+  },
+  "devDependencies": {
+    "babel-core": "6.18.2",
+    "babel-loader": "6.2.8",
+    "babel-preset-latest": "6.16.0",
+    "css-loader": "0.26.1",
+    "eslint": "3.9.1",
+    "eslint-config-airbnb": "13.0.0",
+    "eslint-loader": "1.6.1",
+    "eslint-plugin-import": "2.1.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "6.6.0",
+    "file-loader": "0.9.0",
+    "node-sass": "^4.0.0",
+    "resolve-url-loader": "^1.6.1",
+    "sass-loader": "4.1.1",
+    "style-loader": "0.13.1",
+    "uglifyjs": "2.4.10",
+    "url-loader": "0.5.7",
+    "webpack-dev-server": "2.3.0",
+    "write-file-webpack-plugin": "^3.4.2"
+  },
+  "dependencies": {
+    "@pybee/toga": "~0.0.6-dev.1",
+    "webpack-bundle-tracker": "0.1.0",
+    "webpack": "2.2.0"
+  }
+}
