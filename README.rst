@@ -15,7 +15,7 @@ Create a `setup.py`::
 
   from setuptools import setup, find_packages
 
-  setup(name='YourProject',
+  setup(name='yourproject',
       version = '0.1',
       packages = find_packages(),
       options = {
@@ -37,4 +37,26 @@ Then, generate the template::
 
   $ python setup.py django
 
-This will roll out a full Django project, ready for you to run or deploy.
+This will roll out a full Django project structure, expecting to find
+a class called ``yourproject.app.YourProject`` that has a ``urls`` attribute.
+
+Once you've rolled out the template, you'll need to do three
+pieces of configuration:
+
+1. Update the settings to reflect local conditions. Some default settings
+   have been provided; to use them::
+
+     $ cd briefcase/settings
+     $ mv env.template .env
+     $ cd ../..
+
+   This will create a Sqlite database. If you want to use a different database
+   configuration, you can edit the ``.env`` file (or any other settings file)
+
+2. Run the initial migrations::
+
+     $ ./manage.py migrate
+
+3. Start the server::
+
+     $ ./manage.py runserver
