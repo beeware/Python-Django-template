@@ -1,6 +1,7 @@
 {
     "app_name": "appname",
     "formal_name": "App Name",
+    "class_name": "AppName",
     "dir_name": "django",
     "author": "Brutus Bee",
     "description": "A sample application",

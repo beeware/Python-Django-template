@@ -1,6 +1,6 @@
 {
   "name": "{{ cookiecutter.app_name }}",
-  "version": "{{ cookiecutter.version_code }}",
+  "version": "{{ cookiecutter.version }}",
   "description": "{{ cookiecutter.description }}",
   "author": "{{ cookiecutter.author }}",
   "license": "BSD-3-Clause",

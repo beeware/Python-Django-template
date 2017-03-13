@@ -1,4 +1,4 @@
-"""togatest URL Configuration
+"""Briefcase URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -14,14 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 
+from django.conf import settings
 from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 
-from {{ cookiecutter.app_name }} import {{ cookiecutter.class_name }}
+from {{ cookiecutter.app_name }}.app import {{ cookiecutter.class_name }}
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', {{ cookiecutter.class_name }}('{{ cookiecutter.formal_name }} {{ cookiecutter.version }}', '{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}').urls)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-    url(r'', {{ cookiecutter.class_name }}('{{ cookiecutter.formal_name }} {{ cookiecutter.version_code }}', '{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}').urls)
-]
+if settings.DEBUG:
+    from django.views.static import serve
+    urlpatterns += [
+        url(r'^(?P<path>favicon\.ico)$', serve, {'document_root': settings.BASE_DIR('assets')})
+    ]
