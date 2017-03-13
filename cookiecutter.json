@@ -1,0 +1,11 @@
+{
+    "app_name": "appname",
+    "formal_name": "App Name",
+    "class_name": "AppName",
+    "dir_name": "django",
+    "author": "Brutus Bee",
+    "bundle": "com.example",
+    "description": "A sample application",
+    "version": "0.0.1",
+    "secret_key": "this-is-totally-a-sekrit"
+}

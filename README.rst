@@ -1,12 +1,62 @@
 Python Django Template
-===================
+======================
 
 A template for building Python apps that will run as a web server using Django.
 
-The master branch of this repository has no content; there is an
-independent branch for each supported version of Python. The following
-Python versions are supported:
+This repository branch contains a template for Python 3.4. Other Python versions are available by cloning other branches of repository.
 
-* `Python 3.5 <https://github.com/pybee/Python-django-template/tree/3.5>`__
+How to use
+----------
 
-See the individual branches for usage instructions.
+Create a `setup.py`::
+
+
+  #!/usr/bin/env python
+
+  from setuptools import setup, find_packages
+
+  setup(name='yourproject',
+      version = '0.1',
+      packages = find_packages(),
+      options = {
+          'app': {
+              'formal_name': 'Your Project',
+          },
+          'django': {
+              'app_requires': [
+                  'toga-django',
+              ]
+          }
+      }
+  )
+
+
+Create a Python 3.4 ``virtualenv``, and ``pip install briefcase``
+
+Then, generate the template::
+
+  $ python setup.py django
+
+This will roll out a full Django project structure, expecting to find
+a class called ``yourproject.app.YourProject`` that has a ``urls`` attribute.
+
+Once you've rolled out the template, you'll need to do three
+pieces of configuration:
+
+1. Update the settings to reflect local conditions. Some default settings
+   have been provided; to use them::
+
+     $ cd briefcase/settings
+     $ mv env.template .env
+     $ cd ../..
+
+   This will create a Sqlite database. If you want to use a different database
+   configuration, you can edit the ``.env`` file (or any other settings file)
+
+2. Run the initial migrations::
+
+     $ ./manage.py migrate
+
+3. Start the server::
+
+     $ ./manage.py runserver
