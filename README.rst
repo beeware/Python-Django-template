@@ -16,7 +16,7 @@ Create a `setup.py`::
   from setuptools import setup, find_packages
 
   setup(name='yourproject',
-      version = '0.1',
+      version = '0.1.0',
       packages = find_packages(),
       options = {
           'app': {
@@ -30,6 +30,13 @@ Create a `setup.py`::
       }
   )
 
+.. note::
+
+    The version number must be compliant with `Semantic Versioning`_.
+    Version numbers like ``"1.0"`` or ``"0.1"`` will be rejected
+    by `npm` during the packaging of Javascript resources.
+
+.. _Semantic Versioning: http://semver.org>
 
 Create a Python 3.4 ``virtualenv``, and ``pip install briefcase``
 
@@ -46,7 +53,7 @@ pieces of configuration:
 1. Update the settings to reflect local conditions. Some default settings
    have been provided; to use them::
 
-     $ cd briefcase/settings
+     $ cd django/briefcase/settings
      $ mv env.template .env
      $ cd ../..
 
