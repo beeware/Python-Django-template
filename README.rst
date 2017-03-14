@@ -36,7 +36,7 @@ Create a `setup.py`::
     Version numbers like ``"1.0"`` or ``"0.1"`` will be rejected
     by `npm` during the packaging of Javascript resources.
 
-.. _Semantic Versioning: http://semver.org>
+.. _Semantic Versioning: http://semver.org
 
 Create a Python 3.5 ``virtualenv``, and ``pip install briefcase``
 
