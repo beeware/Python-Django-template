@@ -38,6 +38,14 @@ Create a `setup.py`::
 
 .. _Semantic Versioning: http://semver.org
 
+
+.. note::
+  
+    If you're coming here from `briefcase-template`_, make sure you update the ``app_requires``. 
+
+.. _briefcase-template: https://github.com/pybee/briefcase-template
+
+
 Create a Python 3.5 ``virtualenv``, and ``pip install briefcase``
 
 Then, generate the template::
