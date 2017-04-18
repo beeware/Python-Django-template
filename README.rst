@@ -45,23 +45,20 @@ Then, generate the template::
   $ python setup.py django
 
 This will roll out a full Django project structure, expecting to find
-a class called ``yourproject.app.YourProject`` that has a ``urls`` attribute.
+a method called ``main`` in ``yourproject.app`` that returns an object
+that has a ``urls`` attribute.
 
 Once you've rolled out the template, you'll need to do three
 pieces of configuration:
 
-1. Update the settings to reflect local conditions. Some default settings
-   have been provided; to use them::
-
-     $ cd django/briefcase/settings
-     $ mv env.template .env
-     $ cd ../..
-
-   This will create a Sqlite database. If you want to use a different database
-   configuration, you can edit the ``.env`` file (or any other settings file)
+1. Check that settings to reflect local conditions. Some default settings
+   using an Sqlite database have been provided in
+   `django/briefcase/settings/.env`; if you want to use a different database
+   or modify any other settings, do so now.
 
 2. Run the initial migrations::
 
+     $ cd django
      $ ./manage.py migrate
 
 3. Start the server::
