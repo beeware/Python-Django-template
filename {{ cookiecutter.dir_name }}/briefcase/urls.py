@@ -19,12 +19,12 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from {{ cookiecutter.app_name }}.app import {{ cookiecutter.class_name }}
+from {{ cookiecutter.app_name }}.app import main
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', {{ cookiecutter.class_name }}('{{ cookiecutter.formal_name }} {{ cookiecutter.version }}', '{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}').urls)
+    url(r'', main().urls)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
