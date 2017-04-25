@@ -19,12 +19,12 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from {{ cookiecutter.app_name }}.app import main
+from toga.django import TogaApp
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', main().urls)
+    url(r'', TogaApp('{{ cookiecutter.app_name }}').urls)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
