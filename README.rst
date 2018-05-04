@@ -3,7 +3,7 @@ Python Django Template
 
 A template for building Python apps that will run as a web server using Django.
 
-This repository branch contains a template for Python 3.5. Other Python versions are available by cloning other branches of repository.
+This repository branch contains a template for Python 3.6. Other Python versions are available by cloning other branches of repository.
 
 How to use
 ----------
@@ -38,7 +38,7 @@ Create a `setup.py`::
 
 .. _Semantic Versioning: http://semver.org
 
-Create a Python 3.5 ``virtualenv``, and ``pip install briefcase``
+Create a Python 3.6 ``virtualenv``, and ``pip install briefcase``
 
 Then, generate the template::
 
